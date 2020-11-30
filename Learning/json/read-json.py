@@ -1,11 +1,11 @@
 #
 # read-json.py
 #
-import json
+import pandas as pd
 
-_file = open('data.json',)
-jsondata = json.load(_file)
-for i in jsondata['glossary']:
-    print(i)
+jsondata = pd.read_json('data.json')
 
-_file.close()
+print(jsondata)
+print()
+
+print(jsondata.iloc[1:3,1:3])
